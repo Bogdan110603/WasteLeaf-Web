@@ -1,144 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WasteLeaf</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="resources/logo_wasteleaf_big.png">
-</head>
-<body>
-  <div id="navBar" style="display: none">
-    <img id="backBtn" src="resources/arrow_circle_right_black_24dp__1.png" onclick="backBtnOnClick()">
-    <img id="feedBtn" src="resources/people_black_24dp_mic.png" onclick="feedBtnOnClick()">
-    <img id="profileBtn" src="resources/face_black_24dp_mic.png" onclick="profileBtnOnClick()">
-    <img id="logoutBtn" src="resources/logout_black_24dp.png" onclick="logoutBtnOnClick()">
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WasteLeaf</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="resources/logo_wasteleaf_big.png"
+    />
+  </head>
+  <body>
+    <div id="navBar" style="display: none">
+      <img
+        id="backBtn"
+        src="resources/arrow_circle_right_black_24dp__1.png"
+        onclick="backBtnOnClick()"
+      />
+      <img
+        id="feedBtn"
+        src="resources/people_black_24dp_mic.png"
+        onclick="feedBtnOnClick()"
+      />
+      <img
+        id="profileBtn"
+        src="resources/face_black_24dp_mic.png"
+        onclick="profileBtnOnClick()"
+      />
+      <img
+        id="logoutBtn"
+        src="resources/logout_black_24dp.png"
+        onclick="logoutBtnOnClick()"
+      />
+    </div>
 
-  <div id="content">
-    <div id="feedScreen" style="display: none">
-    </div>
-  
-  
-  
-    <div id="userScreen" style="display: none">
-      <div id="profileDiv">
-        <p id="nickname"></p>
-        <img id="profilePicture">
-        <p id="stats"></p>
-      </div>
-    </div>
-  
-  
-  
-    <div id="postScreen" style="display: none">
-      <img id="profilePicturePost" src="">
-      <p id="nicknameUserPost"></p>
-      <p id="timestampPost"></p>
-      <p id="text"></p>
-      <div id="imagePostDiv">
-        <img id="imagePost" src="">
-      </div>
-      <p id="likesNumber"></p>
-      <img id="unlikedIcon" src="resources/thumb_up_off_alt_black_24dp.png">
-      <img id="likedIcon" src="resources/thumb_up_alt_black_24dp.png" style="display: none">
-  
-      <div id="commentsDiv">
-      </div>
-  
-      <input id="inputComment">
-      <img id="postCommentBtn" src="resources/post.png">
-    </div>
-  </div>
+    <div id="content">
+      <div id="feedScreen" style="display: none"></div>
 
-  <div id="loginScreen">
-    <img id="logotext" src="resources/Screenshot 2022-06-26 132314.png">
-    <img id="logoicon" src="resources/logo_wasteleaf_big.png">
-    <div id="googleLoginBtn">
-      <a class="oauth-container btn darken-4 white black-text" onclick="window.signInUser()" style="text-transform:none">
+      <div id="userScreen" style="display: none">
+        <div id="profileDiv">
+          <p id="nickname"></p>
+          <img id="profilePicture" />
+          <p id="stats"></p>
+        </div>
+      </div>
+
+      <div id="postScreen" style="display: none">
+        <img id="profilePicturePost" src="" />
+        <p id="nicknameUserPost"></p>
+        <p id="timestampPost"></p>
+        <p id="text"></p>
+        <div id="imagePostDiv">
+          <img id="imagePost" src="" />
+        </div>
+        <p id="likesNumber"></p>
+        <img id="unlikedIcon" src="resources/thumb_up_off_alt_black_24dp.png" />
+        <img
+          id="likedIcon"
+          src="resources/thumb_up_alt_black_24dp.png"
+          style="display: none"
+        />
+
+        <div id="commentsDiv"></div>
+
+        <input id="inputComment" />
+        <img id="postCommentBtn" src="resources/post.png" />
+      </div>
+    </div>
+
+    <div id="loginScreen">
+      <img id="logotext" src="resources/Screenshot 2022-06-26 132314.png" />
+      <img id="logoicon" src="resources/logo_wasteleaf_big.png" />
+      <div id="googleLoginBtn">
+        <a
+          class="oauth-container btn darken-4 white black-text"
+          id="loginContainer"
+          onclick="window.signInUser()"
+          style="text-transform: none"
+        >
           <div class="left">
-              <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            <img
+              width="20px"
+              style="margin-top: 7px; margin-right: 8px"
+              alt="Google sign-in"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+            />
           </div>
           Login with Google
-      </a>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        </a>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+        />
+      </div>
     </div>
-    <div id="googleLoginBtn1">
-      <a class="oauth-container btn darken-4 white black-text" onclick="window.signInUser()" style="text-transform:none">
-          <div class="left">
-              <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-          </div>
-          Login with Google
-      </a>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <div id="loadingScreen">
+      <img id="logoiconLoading" src="resources/logo_wasteleaf_big.png" />
+      <img id="loadingText" src="resources/loading.png" />
+      <img id="loadingCircle" src="resources/subtraction_6.png" />
     </div>
-  </div>
 
-  <div id="loadingScreen">
-    <img id="logoiconLoading" src="resources/logo_wasteleaf_big.png">
-    <img id="loadingText" src="resources/loading.png">
-    <img id="loadingCircle" src="resources/subtraction_6.png">
-  </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+      import {
+        getFunctions,
+        httpsCallable,
+      } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-functions.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+        getAdditionalUserInfo,
+      } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+      import {
+        getStorage,
+        ref,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js";
+      import {
+        getFirestore,
+        collection,
+        doc,
+        getDocs,
+        setDoc,
+        deleteDoc,
+      } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-    import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-functions.js";
-    import { getAuth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
-    import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js";
-    import { getFirestore, collection, doc, getDocs, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"; 
+      const firebaseConfig = {
+        apiKey: "AIzaSyDCdErIC_yEpBxPXno7L2lOsbmElGDdBQI",
+        authDomain: "wasteleaf-web-android-64a33.firebaseapp.com",
+        projectId: "wasteleaf-web-android-64a33",
+        storageBucket: "wasteleaf-web-android-64a33.appspot.com",
+        messagingSenderId: "318508418730",
+        appId: "1:318508418730:web:3ba42242b3fea9ee8532d3",
+        measurementId: "G-2DZJHK5N9N",
+      };
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDCdErIC_yEpBxPXno7L2lOsbmElGDdBQI",
-      authDomain: "wasteleaf-web-android-64a33.firebaseapp.com",
-      projectId: "wasteleaf-web-android-64a33",
-      storageBucket: "wasteleaf-web-android-64a33.appspot.com",
-      messagingSenderId: "318508418730",
-      appId: "1:318508418730:web:3ba42242b3fea9ee8532d3",
-      measurementId: "G-2DZJHK5N9N"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const functions = getFunctions(app);
-    const storage = getStorage();
-    const auth = getAuth();
-    const provider = new GoogleAuthProvider();
-    const db = getFirestore(app);
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const functions = getFunctions(app);
+      const storage = getStorage();
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+      const db = getFirestore(app);
 
-    let currentUserUID;
+      let currentUserUID;
 
-    window.signInUser = async function signInUser() {
-      const result = await signInWithPopup(auth, provider)
-      const { isNewUser } = getAdditionalUserInfo(result) 
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-      currentUserUID = user.uid;
+      window.signInUser = async function signInUser() {
+        const result = await signInWithPopup(auth, provider);
+        const { isNewUser } = getAdditionalUserInfo(result);
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        currentUserUID = user.uid;
 
-      console.log("Hello user " + currentUserUID);
+        console.log("Hello user " + currentUserUID);
 
-      if (!isNewUser) {
-        activateFeedScreen(currentUserUID);
-      }
-    }
+        if (!isNewUser) {
+          activateFeedScreen(currentUserUID);
+        }
+      };
 
-    window.getCurrentUserUID = function getCurrentUserUID() {
-      return currentUserUID;
-    }
+      window.getCurrentUserUID = function getCurrentUserUID() {
+        return currentUserUID;
+      };
 
-    window.httpsCallable = httpsCallable;
-    window.functions = functions;
-    window.getDownloadURL = getDownloadURL;
-    window.ref = ref;
-    window.storage = storage;
-  </script>
+      window.httpsCallable = httpsCallable;
+      window.functions = functions;
+      window.getDownloadURL = getDownloadURL;
+      window.ref = ref;
+      window.storage = storage;
+    </script>
 
-  <script src="scripts/main.js"></script>
-  <script src="scripts/feed.js"></script>
-  <script src="scripts/user.js"></script>
-  <script src="scripts/post.js"></script>
-</body>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/feed.js"></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/post.js"></script>
+  </body>
 </html>

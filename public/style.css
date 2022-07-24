@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
-  width: 100%;
-}
-
 #navBar {
   height: 100%;
   width: 3%;
@@ -70,37 +65,30 @@ body, html {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 /* LOGIN */
-#loginScreen {
-  height: 100%;
-  width: 100%;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-#googleLoginBtn {
-  position: fixed;
-  left: 660px;
-  bottom: 50px;
-}
-
-#googleLoginBtn1 {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-}
 
 #logotext {
-  position: fixed;
-  top: 10px;
-  left: 160px;
+  width: 80vw;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 #logoicon {
-  position: fixed;
-  top: 200px;
-  left: 600px;
+  width: 30vw;
+  margin-top: 150px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#loginContainer {
+  width: 200px;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 
